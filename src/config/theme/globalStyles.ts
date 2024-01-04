@@ -51,12 +51,6 @@ const globalStyles = {
     fontWeight: constants.fontWeight.NORMAL,
     color: constants.color.GREY_DARK,
   },
-  cartNotificationText: {
-    fontSize: constants.fontSize.H8,
-    fontFamily: constants.fontFamily,
-    fontWeight: constants.fontWeight.BOLD,
-    color: constants.color.WHITE,
-  },
   continueBtnDefaultContainer: {
     marginTop: constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 4,
     height: constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 10,

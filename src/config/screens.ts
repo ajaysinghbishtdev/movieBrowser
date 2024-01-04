@@ -1,5 +1,5 @@
 const screens = {
-  mainTab: 'MainTab',
+  MAIN_TAB: 'MainTab',
 };
 
 export default screens;

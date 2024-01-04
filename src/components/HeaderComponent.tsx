@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {StyleSheet, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -30,9 +30,6 @@ interface IHeaderProps {
   rightComponentFirstIconOnPress?: any;
   RightComponentSecondIcon?: any;
   rightComponentSecondIconOnPress?: any;
-  rightComponentTypeLanguage?: boolean;
-  rightComponentTypeLanguageText?: string;
-  rightComponentTypeLanguageOnPress?: any;
 }
 
 const HeaderComponent: FunctionComponent<IHeaderProps> = ({
@@ -55,9 +52,6 @@ const HeaderComponent: FunctionComponent<IHeaderProps> = ({
   rightComponentFirstIconOnPress,
   RightComponentSecondIcon,
   rightComponentSecondIconOnPress,
-  rightComponentTypeLanguage,
-  rightComponentTypeLanguageText,
-  rightComponentTypeLanguageOnPress,
 }) => {
   const navigation = useNavigation();
 
@@ -181,26 +175,6 @@ const HeaderComponent: FunctionComponent<IHeaderProps> = ({
             </TouchableOpacity>
           )}
         </View>
-      )}
-      {rightComponent && rightComponentTypeLanguage && (
-        <TouchableOpacity
-          onPress={rightComponentTypeLanguageOnPress}
-          style={styles.rightComponent}>
-          <Image
-            style={{
-              marginRight: theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH,
-              height: theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 4,
-              width: theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 4,
-              tintColor: theme.constants.color.BLUE,
-            }}
-            source={require('../assets/icons/language.png')}
-          />
-          <TextComponent
-            type="headerRightComponentText"
-            fontWeight="BOLD"
-            text={rightComponentTypeLanguageText}
-          />
-        </TouchableOpacity>
       )}
       {!rightComponent && (
         <TouchableOpacity

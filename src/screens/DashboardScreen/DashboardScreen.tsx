@@ -1,11 +1,17 @@
 import React, {FunctionComponent} from 'react';
-import {Text, View} from 'react-native';
+
+import _R from '../../R';
+import Header from './components/Header';
 
 const DashboardScreen: FunctionComponent = () => {
   return (
-    <View>
-      <Text>Dashboard</Text>
-    </View>
+    <_R.components.BaseViewComponent
+      isGreyBackgroundColor
+      isSafeAreaTopView
+      isSafeAreaBottomView
+      isNormalView>
+      <Header />
+    </_R.components.BaseViewComponent>
   );
 };
 

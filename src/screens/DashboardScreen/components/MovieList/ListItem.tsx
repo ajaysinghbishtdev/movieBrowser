@@ -1,17 +1,36 @@
 import React, {FunctionComponent} from 'react';
-import {Image, ImageBackground, StyleSheet, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
 import _R from '../../../../R';
 import {IMovie} from '../../../../redux/dashboard/types';
 import urls from '../../../../config/urls';
+import actionCreators from '../../../../redux/actionCreators';
+import {useAppDispatch} from '../../../../redux';
+import {goToScreen} from '../../../../navigators/RootNavigator';
+import screens from '../../../../config/screens';
 
 export interface IProps {
   item: IMovie;
 }
 
 const ListItem: FunctionComponent<IProps> = ({item}) => {
+  const dispatch = useAppDispatch();
+
+  const _onPosterClick = (movie: IMovie) => {
+    dispatch(actionCreators.movie.setMovie(movie));
+    goToScreen(screens.MOVIE_DETAILS);
+  };
+
   return (
-    <View style={styles.item}>
+    <TouchableOpacity
+      style={styles.item}
+      activeOpacity={0.8}
+      onPress={() => _onPosterClick(item)}>
       <ImageBackground
         style={styles.image}
         imageStyle={styles.imageBackgroundImageStyle}
@@ -24,7 +43,7 @@ const ListItem: FunctionComponent<IProps> = ({item}) => {
           resizeMode="cover"
         />
       </ImageBackground>
-    </View>
+    </TouchableOpacity>
   );
 };
 

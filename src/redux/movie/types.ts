@@ -2,8 +2,8 @@ export interface IMovie {
   id: number;
   title: string;
   overview: string;
-  releaseDate: string;
-  voteAverage: number;
+  release_date: string;
+  vote_average: number;
   poster_path: string;
   backdrop_path: string;
 }

@@ -4,9 +4,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createNavigationContainerRef} from '@react-navigation/native';
 import {CommonActions} from '@react-navigation/native';
 
-import MainTab from './MainTab';
-
 import screens from '../config/screens';
+import MainTab from './MainTab';
+import MovieDetailsScreen from '../screens/MovieDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +46,10 @@ export const RootNavigator: FunctionComponent = () => {
         headerShown: false,
       }}>
       <Stack.Screen name={screens.MAIN_TAB} component={MainTab} />
+      <Stack.Screen
+        name={screens.MOVIE_DETAILS}
+        component={MovieDetailsScreen}
+      />
     </Stack.Navigator>
   );
 };

@@ -2,8 +2,10 @@ import React, {FunctionComponent} from 'react';
 
 import {useFocusEffect} from '@react-navigation/native';
 
-import _R from '../../R';
 import Header from './components/Header';
+import MovieCategoryList from './components/MovieCategoryList';
+
+import _R from '../../R';
 import {useAppDispatch} from '../../redux';
 import actionCreators from '../../redux/actionCreators';
 
@@ -21,8 +23,9 @@ const DashboardScreen: FunctionComponent = () => {
       isGreyBackgroundColor
       isSafeAreaTopView
       isSafeAreaBottomView
-      isNormalView>
+      isScrollable>
       <Header />
+      <MovieCategoryList />
     </_R.components.BaseViewComponent>
   );
 };

@@ -2,6 +2,7 @@ import React, {FunctionComponent} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import {useSelector} from 'react-redux';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 // import Skeleton from './Skeleton';
 
@@ -16,38 +17,69 @@ const Overview: FunctionComponent = () => {
 
   return loading ? null : (
     <View style={styles.container}>
-      <View style={[styles.child, styles.nowPlayingContainer]}>
-        <_R.components.TextComponent
-          style={styles.heading}
-          fontSize="H4"
-          fontWeight="BOLD"
-          text={'Now Playing'}
-        />
+      <View style={styles.child}>
+        <View style={styles.headingContainer}>
+          <_R.components.TextComponent
+            style={styles.heading}
+            fontSize="H3"
+            fontWeight="BOLD"
+            text={'Now Playing'}
+          />
+          <MaterialIcons
+            name={'chevron-right'}
+            size={_R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 6}
+            color={_R.theme.constants.color.GREY_DARKEST}
+          />
+        </View>
         <MovieList data={movieCategoryList.nowPlaying || []} />
       </View>
-      <View style={[styles.child, styles.popularContainer]}>
-        <_R.components.TextComponent
-          style={styles.heading}
-          fontSize="H4"
-          fontWeight="BOLD"
-          text={'Popular'}
-        />
+      <View style={styles.child}>
+        <View style={styles.headingContainer}>
+          <_R.components.TextComponent
+            style={styles.heading}
+            fontSize="H3"
+            fontWeight="BOLD"
+            text={'Popular'}
+          />
+          <MaterialIcons
+            name={'chevron-right'}
+            size={_R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 6}
+            color={_R.theme.constants.color.GREY_DARKEST}
+          />
+        </View>
+        <MovieList data={movieCategoryList.popular || []} />
       </View>
-      <View style={[styles.child, styles.topRatedContainer]}>
-        <_R.components.TextComponent
-          style={styles.heading}
-          fontSize="H4"
-          fontWeight="BOLD"
-          text={'Top Rated'}
-        />
+      <View style={styles.child}>
+        <View style={styles.headingContainer}>
+          <_R.components.TextComponent
+            style={styles.heading}
+            fontSize="H3"
+            fontWeight="BOLD"
+            text={'Top Rated'}
+          />
+          <MaterialIcons
+            name={'chevron-right'}
+            size={_R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 6}
+            color={_R.theme.constants.color.GREY_DARKEST}
+          />
+        </View>
+        <MovieList data={movieCategoryList.topRated || []} />
       </View>
-      <View style={[styles.child, styles.upcomingContainer]}>
-        <_R.components.TextComponent
-          style={styles.heading}
-          fontSize="H4"
-          fontWeight="BOLD"
-          text={'Upcoming'}
-        />
+      <View style={styles.child}>
+        <View style={styles.headingContainer}>
+          <_R.components.TextComponent
+            style={styles.heading}
+            fontSize="H3"
+            fontWeight="BOLD"
+            text={'Upcoming'}
+          />
+          <MaterialIcons
+            name={'chevron-right'}
+            size={_R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 6}
+            color={_R.theme.constants.color.GREY_DARKEST}
+          />
+        </View>
+        <MovieList data={movieCategoryList.upcoming || []} />
       </View>
     </View>
   );
@@ -58,23 +90,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   child: {
-    marginBottom: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 5,
+    marginBottom: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 2,
   },
-  nowPlayingContainer: {
-    // backgroundColor: _R.theme.constants.color.BLUE,
-  },
-  popularContainer: {
-    backgroundColor: _R.theme.constants.color.RED_DARK,
-  },
-  topRatedContainer: {
-    backgroundColor: _R.theme.constants.color.GREEN,
-  },
-  upcomingContainer: {
-    backgroundColor: _R.theme.constants.color.BLUE_LIGHT,
+  headingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   heading: {
-    marginTop: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 6,
-    marginBottom: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 3,
+    marginVertical: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 3,
     color: _R.theme.constants.color.GREY_DARKEST,
   },
 });

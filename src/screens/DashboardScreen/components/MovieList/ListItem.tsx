@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, ImageBackground, StyleSheet, View} from 'react-native';
 
 import _R from '../../../../R';
 import {IMovie} from '../../../../redux/dashboard/types';
@@ -12,13 +12,18 @@ export interface IProps {
 const ListItem: FunctionComponent<IProps> = ({item}) => {
   return (
     <View style={styles.item}>
-      <Image
+      <ImageBackground
         style={styles.image}
-        source={{
-          uri: urls.TMDB_POSTER_URL + item.poster_path,
-        }}
-        resizeMode="cover"
-      />
+        imageStyle={styles.imageBackgroundImageStyle}
+        source={require('../../../../assets/images/placeholder.png')}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: urls.TMDB_POSTER_URL + item.poster_path,
+          }}
+          resizeMode="cover"
+        />
+      </ImageBackground>
     </View>
   );
 };
@@ -40,6 +45,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.18,
     shadowRadius: 1.0,
     elevation: 1,
+  },
+  imageBackgroundImageStyle: {
+    height: _R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 40,
+    width: _R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 25,
+    resizeMode: 'contain',
+    borderRadius: 8,
+    backgroundColor: _R.theme.constants.color.GREY_LIGHT,
   },
   image: {
     flex: 1,

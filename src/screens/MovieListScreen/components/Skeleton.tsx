@@ -21,6 +21,11 @@ const Skeleton: FunctionComponent = () => {
         <View style={styles.child} />
         <View style={styles.child} />
       </View>
+      <View style={styles.row}>
+        <View style={styles.child} />
+        <View style={styles.child} />
+        <View style={styles.child} />
+      </View>
     </_R.components.SkeletonPlaceholderComponent>
   );
 };

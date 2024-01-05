@@ -9,7 +9,7 @@ export interface IProps {
   data: IMovie[];
 }
 
-const NowPlayingList: FunctionComponent<IProps> = ({data}) => {
+const MovieList: FunctionComponent<IProps> = ({data}) => {
   const renderItem = ({item}: {item: IMovie}) => {
     return <ListItem item={item} />;
   };
@@ -25,4 +25,4 @@ const NowPlayingList: FunctionComponent<IProps> = ({data}) => {
   );
 };
 
-export default NowPlayingList;
+export default MovieList;

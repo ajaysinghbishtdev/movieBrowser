@@ -7,7 +7,7 @@ import {useSelector} from 'react-redux';
 
 import _R from '../../../../R';
 import {RootState} from '../../../../redux/reducers';
-import NowPlayingList from '../NowPlayingList';
+import MovieList from '../MovieList';
 
 const Overview: FunctionComponent = () => {
   const {loading, movieCategoryList} = useSelector(
@@ -23,7 +23,7 @@ const Overview: FunctionComponent = () => {
           fontWeight="BOLD"
           text={'Now Playing'}
         />
-        <NowPlayingList data={movieCategoryList.nowPlaying || []} />
+        <MovieList data={movieCategoryList.nowPlaying || []} />
       </View>
       <View style={[styles.child, styles.popularContainer]}>
         <_R.components.TextComponent

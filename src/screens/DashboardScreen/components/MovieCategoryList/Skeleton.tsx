@@ -18,7 +18,7 @@ const Skeleton: FunctionComponent = () => {
 
 const styles = StyleSheet.create({
   top: {
-    marginTop: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 2,
+    marginTop: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 4,
     height: _R.theme.constants.gutterMargin.GUTTER_MARGIN_WIDTH * 6,
     width: '50%',
     borderRadius: 8,

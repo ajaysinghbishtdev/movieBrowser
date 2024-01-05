@@ -89,6 +89,7 @@ const Overview: FunctionComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: _R.theme.constants.gutterMargin.GUTTER_MARGIN_HEIGHT * 2,
     flex: 1,
   },
   child: {

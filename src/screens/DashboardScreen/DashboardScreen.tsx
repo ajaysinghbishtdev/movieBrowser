@@ -2,7 +2,6 @@ import React, {FunctionComponent} from 'react';
 
 import {useFocusEffect} from '@react-navigation/native';
 
-import Header from './components/Header';
 import MovieCategoryList from './components/MovieCategoryList';
 
 import _R from '../../R';
@@ -24,7 +23,6 @@ const DashboardScreen: FunctionComponent = () => {
       isSafeAreaTopView
       isSafeAreaBottomView
       isScrollable>
-      <Header />
       <MovieCategoryList />
     </_R.components.BaseViewComponent>
   );

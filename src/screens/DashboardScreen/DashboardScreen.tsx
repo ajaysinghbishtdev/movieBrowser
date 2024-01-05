@@ -1,6 +1,4 @@
-import React, {FunctionComponent} from 'react';
-
-import {useFocusEffect} from '@react-navigation/native';
+import React, {FunctionComponent, useEffect} from 'react';
 
 import MovieCategoryList from './components/MovieCategoryList';
 
@@ -11,11 +9,9 @@ import actionCreators from '../../redux/actionCreators';
 const DashboardScreen: FunctionComponent = () => {
   const dispatch = useAppDispatch();
 
-  useFocusEffect(
-    React.useCallback(() => {
-      dispatch(actionCreators.dashboard.fetchMovieCategoryList());
-    }, [dispatch]),
-  );
+  useEffect(() => {
+    dispatch(actionCreators.dashboard.fetchMovieCategoryList());
+  }, [dispatch]);
 
   return (
     <_R.components.BaseViewComponent

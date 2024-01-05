@@ -54,7 +54,7 @@ const Overview: FunctionComponent = () => {
         <TouchableOpacity
           style={styles.headingContainer}
           activeOpacity={0.8}
-          onPress={() => _setMovieListType('NOW_PLAYING')}>
+          onPress={() => _setMovieListType('POPULAR')}>
           <_R.components.TextComponent
             style={styles.heading}
             fontSize="H3"
@@ -73,7 +73,7 @@ const Overview: FunctionComponent = () => {
         <TouchableOpacity
           style={styles.headingContainer}
           activeOpacity={0.8}
-          onPress={() => _setMovieListType('NOW_PLAYING')}>
+          onPress={() => _setMovieListType('TOP_RATED')}>
           <_R.components.TextComponent
             style={styles.heading}
             fontSize="H3"
@@ -92,7 +92,7 @@ const Overview: FunctionComponent = () => {
         <TouchableOpacity
           style={styles.headingContainer}
           activeOpacity={0.8}
-          onPress={() => _setMovieListType('NOW_PLAYING')}>
+          onPress={() => _setMovieListType('UPCOMING')}>
           <_R.components.TextComponent
             style={styles.heading}
             fontSize="H3"

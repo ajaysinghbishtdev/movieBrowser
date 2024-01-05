@@ -3,16 +3,17 @@ import {all, call, put, takeEvery} from 'redux-saga/effects';
 import _R from '../../R';
 import actionCreators from '../actionCreators';
 import api from './service';
+import {IMovieListResponse} from './types';
 
 function* fetchMovieCategoryListSaga() {
   yield put(actionCreators.dashboard.setLoading(true));
 
   try {
     const [nowPlayingList, popularList, topRatedList, upcomingList]: [
-      any,
-      any,
-      any,
-      any,
+      IMovieListResponse,
+      IMovieListResponse,
+      IMovieListResponse,
+      IMovieListResponse,
     ] = yield all([
       call(api.fetchNowPlaying),
       call(api.fetchPopular),

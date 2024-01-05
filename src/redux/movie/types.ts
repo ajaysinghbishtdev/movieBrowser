@@ -14,7 +14,17 @@ export interface IMovie {
   backdrop_path: string;
 }
 
+export interface IMovieListResponse {
+  results: IMovie[];
+}
+
 export interface IMovieState {
+  loading: boolean;
+  error: any | null;
   movieListType: TMovieListType | null;
   movie: IMovie | null;
+  nowPlayingMovieList: IMovie[] | null;
+  popularMovieList: IMovie[] | null;
+  topRatedMovieList: IMovie[] | null;
+  upcomingMovieList: IMovie[] | null;
 }

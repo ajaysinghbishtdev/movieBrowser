@@ -8,6 +8,10 @@ export interface IMovie {
   backdrop_path: string;
 }
 
+export interface IMovieListResponse {
+  results: IMovie[];
+}
+
 export interface IMovieCategoryList {
   nowPlaying: IMovie[] | null;
   popular: IMovie[] | null;

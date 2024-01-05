@@ -1,7 +1,7 @@
-import {tmdbState} from './tmdb/reducer';
+import {dashboardState} from './dashboard/reducer';
 
 const selectors = {
-  tmdb: tmdbState,
+  dashboard: dashboardState,
 };
 
 export default selectors;

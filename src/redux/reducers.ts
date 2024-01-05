@@ -1,9 +1,9 @@
 import {combineReducers} from '@reduxjs/toolkit';
 
-import tmdbReducer from './tmdb/reducer';
+import dashboardReducer from './dashboard/reducer';
 
 const rootReducer = combineReducers({
-  tmdb: tmdbReducer,
+  dashboard: dashboardReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

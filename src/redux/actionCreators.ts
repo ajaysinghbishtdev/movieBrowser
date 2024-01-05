@@ -1,7 +1,7 @@
-import tmdbActions from './tmdb/actions';
+import dashboardActions from './dashboard/actions';
 
 const actionCreators = {
-  tmdb: tmdbActions,
+  dashboard: dashboardActions,
 };
 
 export default actionCreators;

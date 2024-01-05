@@ -1,7 +1,7 @@
 import {all} from 'redux-saga/effects';
 
-import tmdbSaga from './tmdb/saga';
+import dashboardSaga from './dashboard/saga';
 
 export default function* rootSaga() {
-  yield all([tmdbSaga()]);
+  yield all([dashboardSaga()]);
 }

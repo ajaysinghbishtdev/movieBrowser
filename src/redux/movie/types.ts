@@ -1,3 +1,9 @@
+export type TMovieListType =
+  | 'NOW_PLAYING'
+  | 'POPULAR'
+  | 'TOP_RATED'
+  | 'UPCOMING';
+
 export interface IMovie {
   id: number;
   title: string;
@@ -9,5 +15,6 @@ export interface IMovie {
 }
 
 export interface IMovieState {
+  movieListType: TMovieListType | null;
   movie: IMovie | null;
 }

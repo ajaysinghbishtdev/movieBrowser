@@ -7,6 +7,7 @@ import {CommonActions} from '@react-navigation/native';
 import screens from '../config/screens';
 import MainTab from './MainTab';
 import MovieDetailsScreen from '../screens/MovieDetailsScreen';
+import MovieListScreen from '../screens/MovieListScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,7 @@ export const RootNavigator: FunctionComponent = () => {
         name={screens.MOVIE_DETAILS}
         component={MovieDetailsScreen}
       />
+      <Stack.Screen name={screens.MOVIE_LIST} component={MovieListScreen} />
     </Stack.Navigator>
   );
 };

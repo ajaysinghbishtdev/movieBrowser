@@ -4,6 +4,7 @@ import {IMovieState} from './types';
 import {RootState} from '../reducers';
 
 const initialState: IMovieState = {
+  movieListType: null,
   movie: null,
 };
 
@@ -11,6 +12,9 @@ const movieSlice = createSlice({
   name: 'movie',
   initialState,
   reducers: {
+    setMovieListType(state, action) {
+      state.movieListType = action.payload;
+    },
     setMovie(state, action) {
       state.movie = action.payload;
     },

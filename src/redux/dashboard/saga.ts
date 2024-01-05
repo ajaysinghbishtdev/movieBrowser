@@ -22,10 +22,10 @@ function* fetchMovieCategoryListSaga() {
 
     yield put(
       actionCreators.dashboard.setMovieCategoryList({
-        nowPlaying: nowPlayingList,
-        popular: popularList,
-        topRated: topRatedList,
-        upcoming: upcomingList,
+        nowPlaying: nowPlayingList?.results?.slice(0, 10),
+        popular: popularList?.results?.slice(0, 10),
+        topRated: topRatedList?.results?.slice(0, 10),
+        upcoming: upcomingList?.results?.slice(0, 10),
       }),
     );
   } catch (error: any) {

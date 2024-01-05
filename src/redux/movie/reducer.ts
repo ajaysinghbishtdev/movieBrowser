@@ -5,6 +5,7 @@ import {RootState} from '../reducers';
 
 const initialState: IMovieState = {
   loading: false,
+  paginationLoading: false,
   error: null,
   movieListType: null,
   movie: null,
@@ -12,6 +13,8 @@ const initialState: IMovieState = {
   popularMovieList: null,
   topRatedMovieList: null,
   upcomingMovieList: null,
+  page: 0,
+  total_pages: 0,
 };
 
 const movieSlice = createSlice({
@@ -20,6 +23,9 @@ const movieSlice = createSlice({
   reducers: {
     setLoading(state, action) {
       state.loading = action.payload;
+    },
+    setPaginationLoading(state, action) {
+      state.paginationLoading = action.payload;
     },
     setError(state, action) {
       state.error = action.payload;
@@ -31,6 +37,7 @@ const movieSlice = createSlice({
       state.movie = action.payload;
     },
     fetchMovieList() {},
+    fetchMovieListPagination() {},
     setNowPlayingMovieList(state, action) {
       state.nowPlayingMovieList = action.payload;
     },
@@ -42,6 +49,12 @@ const movieSlice = createSlice({
     },
     setUpcomingMovieList(state, action) {
       state.upcomingMovieList = action.payload;
+    },
+    setPage(state, action) {
+      state.page = action.payload;
+    },
+    setTotalpages(state, action) {
+      state.total_pages = action.payload;
     },
   },
 });

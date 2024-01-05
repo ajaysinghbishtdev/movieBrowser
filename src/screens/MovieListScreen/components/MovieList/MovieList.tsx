@@ -5,14 +5,22 @@ import {useSelector} from 'react-redux';
 
 import Skeleton from '../Skeleton';
 import ListItem from './ListItem';
+import ListFooter from './ListFooter';
 
 import _R from '../../../../R';
 import {IMovie} from '../../../../redux/movie/types';
 import {RootState} from '../../../../redux/reducers';
+import {useAppDispatch} from '../../../../redux';
+import actionCreators from '../../../../redux/actionCreators';
 
 const MovieList: FunctionComponent = () => {
+  const dispatch = useAppDispatch();
+
   const {
     loading,
+    paginationLoading,
+    page,
+    total_pages,
     movieListType,
     nowPlayingMovieList,
     popularMovieList,
@@ -20,8 +28,18 @@ const MovieList: FunctionComponent = () => {
     upcomingMovieList,
   } = useSelector((state: RootState) => state.movie);
 
+  const _onEndReached = () => {
+    if (!paginationLoading && total_pages > page) {
+      dispatch(actionCreators.movie.fetchMovieListPagination());
+    }
+  };
+
   const renderItem = ({item}: {item: IMovie}) => {
     return <ListItem item={item} />;
+  };
+
+  const renderListFooterComponent = () => {
+    return <ListFooter paginationLoading={paginationLoading} />;
   };
 
   return loading ? (
@@ -41,7 +59,10 @@ const MovieList: FunctionComponent = () => {
           : upcomingMovieList
       }
       renderItem={renderItem}
+      ListFooterComponent={renderListFooterComponent}
       keyExtractor={(item: IMovie) => item.id.toString()}
+      onEndReached={_onEndReached}
+      onEndReachedThreshold={0.5}
     />
   );
 };

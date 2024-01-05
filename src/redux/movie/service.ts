@@ -1,8 +1,8 @@
 import axiosInstance from '../../config/axiosConfig';
 
-const fetchNowPlaying = async () => {
+const fetchNowPlaying = async (page: number) => {
   const response = await axiosInstance.tmdbApi({
-    url: '/movie/now_playing',
+    url: `/movie/now_playing?page=${page}`,
     method: 'get',
     headers: {
       accept: 'application/json',
@@ -12,9 +12,9 @@ const fetchNowPlaying = async () => {
   return response.data;
 };
 
-const fetchPopular = async () => {
+const fetchPopular = async (page: number) => {
   const response = await axiosInstance.tmdbApi({
-    url: '/movie/popular',
+    url: `/movie/popular?page=${page}`,
     method: 'get',
     headers: {
       accept: 'application/json',
@@ -24,9 +24,9 @@ const fetchPopular = async () => {
   return response.data;
 };
 
-const fetchTopRated = async () => {
+const fetchTopRated = async (page: number) => {
   const response = await axiosInstance.tmdbApi({
-    url: '/movie/top_rated',
+    url: `/movie/top_rated?page=${page}`,
     method: 'get',
     headers: {
       accept: 'application/json',
@@ -36,9 +36,9 @@ const fetchTopRated = async () => {
   return response.data;
 };
 
-const fetchUpcoming = async () => {
+const fetchUpcoming = async (page: number) => {
   const response = await axiosInstance.tmdbApi({
-    url: '/movie/upcoming',
+    url: `/movie/upcoming?page=${page}`,
     method: 'get',
     headers: {
       accept: 'application/json',

@@ -16,10 +16,13 @@ export interface IMovie {
 
 export interface IMovieListResponse {
   results: IMovie[];
+  page: number;
+  total_pages: number;
 }
 
 export interface IMovieState {
   loading: boolean;
+  paginationLoading: boolean;
   error: any | null;
   movieListType: TMovieListType | null;
   movie: IMovie | null;
@@ -27,4 +30,6 @@ export interface IMovieState {
   popularMovieList: IMovie[] | null;
   topRatedMovieList: IMovie[] | null;
   upcomingMovieList: IMovie[] | null;
+  page: number;
+  total_pages: number;
 }

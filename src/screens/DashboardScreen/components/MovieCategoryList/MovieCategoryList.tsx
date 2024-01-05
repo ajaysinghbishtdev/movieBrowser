@@ -4,7 +4,7 @@ import {StyleSheet, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-// import Skeleton from './Skeleton';
+import Skeleton from './Skeleton';
 
 import _R from '../../../../R';
 import {RootState} from '../../../../redux/reducers';
@@ -15,7 +15,9 @@ const Overview: FunctionComponent = () => {
     (state: RootState) => state.dashboard,
   );
 
-  return loading ? null : (
+  return loading ? (
+    <Skeleton />
+  ) : (
     <View style={styles.container}>
       <View style={styles.child}>
         <View style={styles.headingContainer}>
